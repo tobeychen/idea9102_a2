@@ -90,7 +90,7 @@
     </section>
 </main>
 <main class="step step-5" style="display: none">
-    <img class="background-image" src="/img/journey.png" alt="journey">
+    <img class="background-image journey" src="/img/journey2.jpeg" alt="journey">
     <section class="section container">
         <div class="section__body flex-col">
             <div class="flex">
@@ -98,13 +98,13 @@
             </div>
             <div class="flex-row" style="gap: 20px;align-self: center;">
                 <button class="button-icon button-secondary" onclick="nextStep(4)" aria-label="Previous">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
-                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43" style="transform: rotate(180deg);">
+                        <path d="M21.3333 42.6667L17.5333 38.9333L32.4667 24H0V18.6667H32.4667L17.5333 3.73333L21.3333 0L42.6667 21.3333L21.3333 42.6667Z" fill="white"/>
                     </svg>
                 </button>
                 <button class="button-icon" onclick="nextStep(6)" aria-label="Next">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
-                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+                        <path d="M21.3333 42.6667L17.5333 38.9333L32.4667 24H0V18.6667H32.4667L17.5333 3.73333L21.3333 0L42.6667 21.3333L21.3333 42.6667Z" fill="white"/>
                     </svg>
                 </button>
             </div>
@@ -206,7 +206,7 @@
         </div>
     </section>
 </main>
-<main class="step step-10" style="background:#95acbf;display: none">
+<main class="step step-10" style="display: none">
     <section class="section container">
         <img class="background-image ripple" src="/img/ripple.png" alt="effect">
         <div class="section__body flex-col">
@@ -216,23 +216,47 @@
             <div class="flex flex-col">
                 <input type="range">
             </div>
-            <div class="flex-row" style="gap: 20px;align-self: center;margin-bottom: 20px;">
-                <button style="height: unset">
-                    Save to library
-                </button>
-                <button style="height: unset">
-                    Send to Catenary
-                </button>
-            </div>
+            <button class="link" style="margin-bottom: 20px;">
+                Save to library
+            </button>
             <div class="flex-row" style="gap: 20px;align-self: center;">
-                <button class="button-icon button-secondary" onclick="nextStep(8)" aria-label="Previous">
+                <button class="button-icon button-secondary" onclick="nextStep(9)" aria-label="Previous">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(11)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
                         <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
                     </svg>
                 </button>
             </div>
         </div>
     </section>
+</main>
+<main class="step step-11" style="display: none">
+    <section class="section container">
+        <img class="background-image ripple" src="/img/ripple.png" alt="effect">
+        <div class="section__body flex-col">
+            <p class="title">Time to release your emotion</p>
+            <div class="flex"></div>
+            <button onclick="nextStep(12)">
+                Send to Catenary
+            </button>
+        </div>
+    </section>
+</main>
+<main class="step step-12" style="display: none">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <p class="title">This is just the beginning of your mindful journey.</p>
+            <div class="flex flex-col">
+                <p style="font-size: 22px;margin-top: 40px;">Over time these little mindful moments are the start of something bigger.</p>
+                <p style="font-size: 22px;margin-top: 20px;">Allow mindfulness to guide you towards a deeper connection with yourself and the world around you.</p>
+            </div>
+        </div>
+    </section>
+</main>
 </main>
 </body>
 </html>
