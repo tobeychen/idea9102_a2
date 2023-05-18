@@ -1,0 +1,258 @@
+:root {
+    --yellow: rgb(253 202 41);
+    --purple: #371B34;
+    --blue: rgb(41 152 253);
+    --green: rgb(50 253 41);
+    --red: rgb(253 41 41);
+    --tint: rgb(41 253 212);
+    --pink: rgb(253 41 186);
+}
+
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 900px;
+    margin: auto;
+    color: #333;
+    font-size: 14px;
+    user-select: none;
+}
+
+.flex {
+    flex: 1;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+}
+
+button {
+    background: var(--purple);
+    border-radius: 10px;
+    color: white;
+    height: 50px;
+    font-size: 26px;
+    align-self: center;
+    padding: 4px 20px;
+    width: 100%;
+    border: none;
+}
+
+button svg {
+    height: 30px;
+    fill: white;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button:not(:disabled):hover, button:not(:disabled):focus {
+    /*opacity: 0.8;*/
+}
+
+.button-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.button-secondary {
+    background: transparent;
+    border: 3px solid var(--purple);
+}
+
+p {
+    opacity: 0.8;
+    margin: 5px 0;
+    color: black;
+    font-size: 30px;
+}
+
+.fs-s {
+    font-size: 20px;
+}
+
+.screenreader {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    width: 0;
+    display: inline-block;
+}
+
+.section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.section__body {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+}
+
+textarea {
+    flex: 1;
+    margin: 10px 0 15px 0;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    padding: 10px;
+    font-size: 18px;
+    min-height: 120px;
+}
+
+.section__header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -43px;
+}
+
+.section__header h2 {
+    font-size: 26px;
+    margin: 5px 0;
+    font-weight: 700;
+    box-shadow: 0 0 0 5px white;
+    background: white;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.section__header button {
+    margin-left: auto;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.section__header svg {
+    width: 50px;
+    height: 50px;
+}
+
+main {
+    height: 100%;
+    max-width: 900px;
+    margin: auto;
+    background: aliceblue;
+}
+
+img {
+    object-fit: cover;
+}
+
+.background-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+.background-image.meditation {
+    bottom: 160px;
+}
+
+.background-image.ripple1, .background-image.ripple2 {
+    right: 0;
+    bottom: 160px;
+    width: unset;
+}
+
+.background-image.ripple2 {
+    bottom: 40px;
+}
+
+.background-image.emotions {
+    bottom: 205px;
+    width: 340px;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+}
+
+.background-image.ripple {
+    width: unset;
+    bottom: 277px;
+    height: 271px;
+}
+
+.emotion {
+    width: 200px;
+}
+
+.step .container {
+    padding: 100px 50px;
+    height: 100%;
+}
+
+.step-2 p + p {
+    margin-top: 40px;
+}
+
+.title {
+    font-weight: 700;
+}
+
+button.link {
+    background: none;
+    color: black;
+    text-decoration: underline;
+}
+
+@keyframes pluse {
+    0% {
+        transform: scale(.9);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(.9);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 24px;
+    }
+
+    .section.control {
+        margin: 10px;
+    }
+
+    textarea {
+        font-size: 20px;
+    }
+
+    button {
+        height: 50px;
+        font-size: 22px;
+    }
+}

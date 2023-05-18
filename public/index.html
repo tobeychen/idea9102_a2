@@ -1,0 +1,238 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
+    <script language="javascript" type="text/javascript" src="libraries/p5.geolocation.js"></script>
+    <script language="javascript" type="text/javascript" src="libraries/socket.io.min.js"></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<main class="step step-1">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <div class="flex">
+                <p>Let’s take a little mindful moment to start off a positive chain effect</p>
+            </div>
+            <button onclick="nextStep(2)">Let's Start</button>
+        </div>
+    </section>
+</main>
+<main class="step step-2" style="display: none">
+    <img class="background-image meditation" src="/img/meditation.png" alt="Meditation">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <div class="flex">
+                <p>Take the time to pause</p>
+                <p>Listen to your surroundings</p>
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(1)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(3)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="step step-3" style="display: none">
+    <img class="background-image ripple1" src="/img/ripple1.png" alt="small ripple">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <div class="flex">
+                <p>Whether you have been feeling low or high with your emotions...</p>
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(2)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(4)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="step step-4" style="display: none">
+    <img class="background-image ripple2" src="/img/ripple2.png" alt="large ripple">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <div class="flex">
+                <p>Performing small mindful actions can set off a chain reaction of positive emotions within us</p>
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(3)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(5)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="step step-5" style="display: none">
+    <img class="background-image" src="/img/journey.png" alt="journey">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <div class="flex">
+                <p style="font-size: 24px;">Everyone has their own emotional journey. Let’s do a mindful action to feel your emotion and release a positive ripple</p>
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(4)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(6)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="step step-6" style="display: none">
+    <img class="background-image emotions" src="/img/emotions.png" alt="journey">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <p class="title">How have you been feeling?</p>
+            <p style="font-size: 12px;">The size of each circle represents the number of people that has chosen the emotion.</p>
+            <p style="font-size: 12px;">The color is what most people has chosen for the emotion.</p>
+            <div class="flex">
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(5)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(7)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="step step-7" style="display: none">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <p class="title">This is what you've chosen</p>
+            <p style="font-size: 18px;">If you don't agree with the color, you can choose your own.</p>
+            <div class="flex flex-col" style="align-items: center;padding-top: 70px;">
+                <img class="emotion" src="/img/sad.png" alt="sad">
+                <button class="link">Change color</button>
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(6)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(8)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<main class="step step-8" style="display: none">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <p class="title">Draw how you feel</p>
+            <p style="font-size: 18px;">Make your emotion come alive by giving it a face.</p>
+            <div class="flex flex-col" style="align-items: center;padding-top: 104px;">
+                <img class="emotion" src="/img/sad2.png" alt="sad">
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(7)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(9)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="step step-9" style="display: none">
+    <section class="section container">
+        <div class="section__body flex-col">
+            <p class="title">Draw how you feel</p>
+            <p style="font-size: 18px;">Make your emotion come alive by giving it a face.</p>
+            <div class="flex flex-col" style="align-items: center;padding-top: 104px;">
+                <img class="emotion" src="/img/sad3.png" alt="sad">
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(8)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+                <button class="button-icon" onclick="nextStep(10)" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="margin-left: 3px;">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="step step-10" style="background:#95acbf;display: none">
+    <section class="section container">
+        <img class="background-image ripple" src="/img/ripple.png" alt="effect">
+        <div class="section__body flex-col">
+            <p class="title">Change the speed of your ripple</p>
+            <p style="font-size: 18px;">Imagine throwing a rock to the lake, with your emotion as the rock, how hard do you want to throw it.</p>
+
+            <div class="flex flex-col">
+                <input type="range">
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;margin-bottom: 20px;">
+                <button style="height: unset">
+                    Save to library
+                </button>
+                <button style="height: unset">
+                    Send to Catenary
+                </button>
+            </div>
+            <div class="flex-row" style="gap: 20px;align-self: center;">
+                <button class="button-icon button-secondary" onclick="nextStep(8)" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.676 11" style="transform: rotate(180deg);margin-right: 3px;fill: var(--purple);">
+                        <path id="Next-Arrow-Icon-SVG-oikjklgf" d="M10.729,129.993l-4.9-4.9a.6.6,0,0,1,0-.855l.571-.571a.6.6,0,0,1,.854,0l3.9,3.88,3.9-3.88a.6.6,0,0,1,.854,0l.571.571a.6.6,0,0,1,0,.855l-4.9,4.9A.6.6,0,0,1,10.729,129.993Z" transform="translate(-123.494 16.656) rotate(-90)"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
